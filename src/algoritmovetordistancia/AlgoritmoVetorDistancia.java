@@ -14,27 +14,24 @@ import java.util.List;
  * @author 10070128
  */
 public class AlgoritmoVetorDistancia {
-
+    private static List<Vertice> GRAFO;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        List<Vertice> grafo = new ArrayList();
+        GRAFO = new ArrayList();
         
-        Vertice a = new Vertice();
-        Vertice b = new Vertice();
-        Vertice c = new Vertice();
+        Vertice vA = new Vertice();
+        Vertice vB = new Vertice();
+        Vertice vC = new Vertice();
         
-        a.vizinhos.add(new Aresta(1, b));
-        a.vizinhos.add(new Aresta(3, c));
+        vA.addArestas(new Aresta(1, vB), new Aresta(3, vC));
         
-        b.vizinhos.add(new Aresta(1, a));
-        b.vizinhos.add(new Aresta(5, c));
+        vB.addArestas(new Aresta(1, vA), new Aresta(5, vC));
         
-        c.vizinhos.add(new Aresta(3, a));
-        c.vizinhos.add(new Aresta(5, b));
+        vC.addArestas(new Aresta(3, vA), new Aresta(5, vB));
         
-        grafo.addAll(Arrays.asList(a, b, c));
+        GRAFO.addAll(Arrays.asList(vA, vB, vC));
         
     }
     

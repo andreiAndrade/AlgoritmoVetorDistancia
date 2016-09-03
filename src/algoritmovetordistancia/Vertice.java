@@ -6,6 +6,7 @@
 package algoritmovetordistancia;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,8 +27,8 @@ public class Vertice {
         this.vizinhos = vizinhos;
     }
     
-    public void addVizinho(Aresta vizinho) {
-        this.vizinhos.add(vizinho);
+    public void addArestas(Aresta... vizinho) {
+        this.vizinhos.addAll(Arrays.asList(vizinho));
         this.alterouRotas = true;
     }
 }
