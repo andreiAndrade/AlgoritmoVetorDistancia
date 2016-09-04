@@ -21,9 +21,9 @@ public class AlgoritmoVetorDistancia {
     public static void main(String[] args) {
         GRAFO = new ArrayList();
         
-        Vertice vA = new Vertice();
-        Vertice vB = new Vertice();
-        Vertice vC = new Vertice();
+        Vertice vA = new Vertice("A");
+        Vertice vB = new Vertice("B");
+        Vertice vC = new Vertice("C");
         
         vA.addArestas(new Aresta(1, vB), new Aresta(3, vC));
         
@@ -32,15 +32,18 @@ public class AlgoritmoVetorDistancia {
         vC.addArestas(new Aresta(3, vA), new Aresta(5, vB));
         
         GRAFO.addAll(Arrays.asList(vA, vB, vC));
+        try{
+        //Inicializa as threads
+       Thread A = new Thread(vA);
+       Thread B = new Thread(vB);
+       Thread C = new Thread(vC);
+        A.start();
+        B.start();
+        C.start();
+    }catch(Exception ex){
+        System.out.println("Excecao: "+ex);
+    }
         
     }
-    
-    private static void calcularRota() {
-        
-    }
-    
-    private static void enviarRotas() {
-        //enviar as listas
-        //threads calcular rotas
-    }
+ 
 }
