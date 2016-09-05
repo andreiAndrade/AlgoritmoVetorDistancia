@@ -29,19 +29,19 @@ public class AlgoritmoVetorDistancia {
         Vertice vE = new Vertice("e");
 
         vA.addVizinho(new Rota(vB, 8));
-        vA.addVizinho(new Rota(vC, 2));
+        vA.addVizinho(new Rota(vC, 5));
 
         vB.addVizinho(new Rota(vA, 8));
         vB.addVizinho(new Rota(vD, 4));
         vB.addVizinho(new Rota(vC, 1));
         vB.addVizinho(new Rota(vE, 2));
 
-        vC.addVizinho(new Rota(vA, 2));
-        vC.addVizinho(new Rota(vD, 1));
+        vC.addVizinho(new Rota(vA, 5));
+        vC.addVizinho(new Rota(vD, 3));
         vC.addVizinho(new Rota(vB, 1));
 
         vD.addVizinho(new Rota(vB, 4));
-        vD.addVizinho(new Rota(vC, 1));
+        vD.addVizinho(new Rota(vC, 3));
         vD.addVizinho(new Rota(vE, 3));
 
         vE.addVizinho(new Rota(vB, 2));

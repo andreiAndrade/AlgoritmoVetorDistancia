@@ -5,10 +5,7 @@
  */
 package algoritmovetordistancia;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author 10070128
@@ -184,6 +181,10 @@ public class Vertice implements Runnable {
 
     @Override
     public void run() {
-        enviarRotas();
+        try {
+            enviarRotas();
+        } catch (ConcurrentModificationException cme) {
+            System.out.println("Problema de concorrência, será resolvido em breve.");
+        }
     }
 }
