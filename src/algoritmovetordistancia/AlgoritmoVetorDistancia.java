@@ -3,6 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+// google chart
+//gnu plotlib
+
+
 package algoritmovetordistancia;
 
 import java.util.ArrayList;

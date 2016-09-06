@@ -99,8 +99,6 @@ public class Vertice extends Thread {
         else
             this.rotasRecebidas.put(vertice, rotas);
         calcularRotas();
-
-//        if (this.alterouRotas) enviarRotas();
     }
 
     public void calcularRotas() {
@@ -138,30 +136,6 @@ public class Vertice extends Thread {
         if (this.alterouRotas) {
             enviarRotas();
         }
-
-//        for (Map.Entry<Vertice, List<Rota>> entry : this.rotasRecebidas.entrySet()) {
-//            Rota rotaReferencia = null;
-//            for (Rota r : this.rotas) {
-//                if (r.getDestino().equals(entry.getKey())) {
-//                    rotaReferencia = r;
-//                }
-//            }
-//
-//            for (Rota rotaRecebida : entry.getValue()) {
-//                if (rotaReferencia != null) {
-//                    for (Rota minhaRota : this.rotas) {
-//                        if (rotaRecebida.getDestino().equals(minhaRota.getDestino())
-//                                && minhaRota.getCusto() < rotaRecebida.getCusto() + rotaReferencia.getCusto()) {
-//                            minhaRota.setCusto(rotaRecebida.getCusto() + rotaReferencia.getCusto());
-//                            this.alterouRotas = true;
-//                        }
-//                    }
-//                } else {
-//                    this.rotas.add(rotaRecebida);
-//                    this.alterouRotas = true;
-//                }
-//            }
-//        }
     }
 
     public int getCustoPorVertice(Vertice v) {
