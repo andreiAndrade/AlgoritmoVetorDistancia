@@ -10,7 +10,7 @@ import java.util.*;
 /**
  * @author 10070128
  */
-public class Vertice implements Runnable {
+public class Vertice extends Thread {
     //region Attributes
     private String nome;
     private List<Rota> vizinhos;
@@ -86,10 +86,9 @@ public class Vertice implements Runnable {
     }
 
     synchronized public void enviarRotas() {
-        System.out.println("Enviando rota de: " + this.nome);
         this.alterouRotas = false;
         for (Rota r : this.vizinhos) {
-            System.out.println("para: " + r.getDestino().getNome());
+            System.out.println("Enviando rota de: " + this.nome+" para: "+ r.getDestino().getNome());
             r.getDestino().addRotasRecebidas(this, this.rotas);
         }
     }
